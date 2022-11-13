@@ -130,10 +130,10 @@ gulp.task('php_woo_tabs', function () {
 })
 
 gulp.task('watch', function() {
-	gulp.watch(localFolder + '*.css',             gulp.series('copyCssDefault'))
-	gulp.watch(localFolder + '*.php',             gulp.series('php'))
 	gulp.watch(localAdminJs + '**/*',             gulp.series('copyAdminJs'))
 	gulp.watch(localCss + '**/*',                 gulp.series('css', 'copyCss'))
+	gulp.watch(localFolder + '*.css',             gulp.series('copyCssDefault'))
+	gulp.watch(localFolder + '*.php',             gulp.series('php'))
 	gulp.watch(localJs + '**/*',                  gulp.series('copyJs'))
 	gulp.watch(localTemplateParts + '**/*',       gulp.series('copyTemplateParts'))
 	gulp.watch(localThemeWoo + '*.php',           gulp.series('php_woo'))
