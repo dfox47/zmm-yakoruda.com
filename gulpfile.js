@@ -18,27 +18,27 @@ const password      = config.password
 const port          = config.port
 const user          = config.user
 
-const remoteFolder                  = '/wp-content/themes/zmm2020/'
-const remoteFolderAdmin             = '/wp-admin/'
-const remoteFolderAdminJs           = remoteFolderAdmin + 'js/'
-const remoteFolderCss               = remoteFolder + 'css/'
-const remoteFolderJs                = remoteFolder + 'js/'
-const remoteFolderThemeWoo          = remoteFolder + 'woocommerce/single-product/'
-const remoteFolderThemeWooTabs      = remoteFolder + 'woocommerce/single-product/tabs/'
-const remoteFolderWooCss            = '/wp-content/plugins/woocommerce/assets/css/'
-const remoteFolderWooPackCss        = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
-const remoteFolderTemplateParts     = remoteFolder + 'template-parts/'
+const remoteFolder            = '/wp-content/themes/zmm2020/'
+const remoteAdmin             = '/wp-admin/'
+const remoteAdminJs           = remoteAdmin + 'js/'
+const remoteCss               = remoteFolder + 'css/'
+const remoteJs                = remoteFolder + 'js/'
+const remoteTemplateParts     = remoteFolder + 'template-parts/'
+const remoteThemeWoo          = remoteFolder + 'woocommerce/single-product/'
+const remoteThemeWooTabs      = remoteFolder + 'woocommerce/single-product/tabs/'
+const remoteWooCss            = '/wp-content/plugins/woocommerce/assets/css/'
+const remoteWooPackCss        = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 
-const localFolder                   = 'wp-content/themes/zmm2020/'
-const localFolderAdmin              = 'wp-admin/'
-const localFolderAdminJs            = localFolderAdmin + 'js/'
-const localFolderCss                = localFolder + 'css/'
-const localFolderJs                 = localFolder + 'js/'
-const localFolderThemeWoo           = localFolder + 'woocommerce/single-product/'
-const localFolderThemeWooTabs       = localFolder + 'woocommerce/single-product/tabs/'
-const localFolderWooCss             = 'wp-content/plugins/woocommerce/assets/css/'
-const localFolderWooPackCss         = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
-const localFolderTemplateParts      = localFolder + 'template-parts/'
+const localFolder             = 'wp-content/themes/zmm2020/'
+const localAdmin              = 'wp-admin/'
+const localAdminJs            = localAdmin + 'js/'
+const localCss                = localFolder + 'css/'
+const localJs                 = localFolder + 'js/'
+const localTemplateParts      = localFolder + 'template-parts/'
+const localThemeWoo           = localFolder + 'woocommerce/single-product/'
+const localThemeWooTabs       = localThemeWoo + 'tabs/'
+const localWooCss             = 'wp-content/plugins/woocommerce/assets/css/'
+const localWooPackCss         = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 
 function getFtpConnection() {
 	return ftp.create({
@@ -54,98 +54,92 @@ function getFtpConnection() {
 const conn = getFtpConnection()
 
 gulp.task('css', function () {
-	return gulp.src(localFolderCss + 'styles.scss')
+	return gulp.src(localCss + 'styles.scss')
 		.pipe(sass())
 		.pipe(cssMinify())
 		.pipe(rename({
 			suffix: ".min"
 		}))
-		.pipe(conn.dest(remoteFolder));
-});
+		.pipe(conn.dest(remoteFolder))
+})
 
 gulp.task('copyCss', function () {
-	return gulp.src(localFolderCss + '**/*.scss')
-		.pipe(conn.dest(remoteFolderCss));
-});
+	return gulp.src(localCss + '**/*.scss')
+		.pipe(conn.dest(remoteCss))
+})
 
 gulp.task('copyCssDefault', function () {
 	return gulp.src(localFolder + '*.css')
-		.pipe(conn.dest(remoteFolder));
-});
+		.pipe(conn.dest(remoteFolder))
+})
 
 gulp.task('copyJs', function () {
-	return gulp.src(localFolderJs + '**/*')
-		.pipe(conn.dest(remoteFolderJs));
-});
+	return gulp.src(localJs + '**/*')
+		.pipe(conn.dest(remoteJs))
+})
 
 gulp.task('copyAdminJs', function () {
-	return gulp.src(localFolderAdminJs + '**/*')
-		.pipe(conn.dest(remoteFolderAdminJs));
-});
+	return gulp.src(localAdminJs + '**/*')
+		.pipe(conn.dest(remoteAdminJs))
+})
 
 gulp.task('copyWooCss', function () {
-	return gulp.src(localFolderWooCss + '*.css')
-		.pipe(conn.dest(remoteFolderWooCss));
-});
+	return gulp.src(localWooCss + '*.css')
+		.pipe(conn.dest(remoteWooCss))
+})
 
 gulp.task('copyWooPackCss', function () {
-	return gulp.src(localFolderWooPackCss + '*.css')
-		.pipe(conn.dest(remoteFolderWooPackCss));
-});
+	return gulp.src(localWooPackCss + '*.css')
+		.pipe(conn.dest(remoteWooPackCss))
+})
 
 gulp.task('copyTemplateParts', function () {
-	return gulp.src(localFolderTemplateParts + '**/*.php')
-		.pipe(conn.dest(remoteFolderTemplateParts));
-});
-
-
+	return gulp.src(localTemplateParts + '**/*.php')
+		.pipe(conn.dest(remoteTemplateParts))
+})
 
 gulp.task('js', function () {
 	return gulp.src([
-		localFolderJs + 'jquery-3.4.1.min.js',
-		localFolderJs + 'jquery-ui.js',
-		localFolderJs + 'select2.min.js',
-		localFolderJs + 'loader.js',
-		localFolderJs + '**/*.js'
+		localJs + 'jquery-3.4.1.min.js',
+		localJs + 'jquery-ui.js',
+		localJs + 'select2.min.js',
+		localJs + 'loader.js',
+		localJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
 		}))
-		.pipe(conn.dest(remoteFolder));
-});
-
-
+		.pipe(conn.dest(remoteFolder))
+})
 
 gulp.task('php', function () {
 	return gulp.src(localFolder + '*.php')
-		.pipe(conn.dest(remoteFolder));
-});
+		.pipe(conn.dest(remoteFolder))
+})
 
 gulp.task('php_woo', function () {
-	return gulp.src(localFolderThemeWoo + '*.php')
-		.pipe(conn.dest(remoteFolderThemeWoo));
-});
+	return gulp.src(localThemeWoo + '*.php')
+		.pipe(conn.dest(remoteThemeWoo))
+})
 
 gulp.task('php_woo_tabs', function () {
-	return gulp.src(localFolderThemeWooTabs + '*.php')
-		.pipe(conn.dest(remoteFolderThemeWooTabs));
-});
-
-
+	return gulp.src(localThemeWooTabs + '*.php')
+		.pipe(conn.dest(remoteThemeWooTabs))
+})
 
 gulp.task('watch', function() {
-	gulp.watch(localFolder + '*.css',                           gulp.series('copyCssDefault'))
-	gulp.watch(localFolder + '*.php',                           gulp.series('php'))
-	gulp.watch(localFolderAdminJs + '**/*',                     gulp.series('copyAdminJs'))
-	gulp.watch(localFolderCss + '**/*',                         gulp.series('css', 'copyCss'))
-	gulp.watch(localFolderJs + '**/*',                          gulp.series('copyJs'))
-	gulp.watch(localFolderThemeWoo + '*.php',                   gulp.series('php_woo'))
-	gulp.watch(localFolderThemeWooTabs + '*.php',       gulp.series('php_woo_tabs'))
-	gulp.watch(localFolderWooCss + '**/*',              gulp.series('copyWooCss'))
-	gulp.watch(localFolderWooPackCss + '**/*',          gulp.series('copyWooPackCss'))
-	gulp.watch(localFolderTemplateParts + '**/*',       gulp.series('copyTemplateParts'))
+	gulp.watch(localFolder + '*.css',             gulp.series('copyCssDefault'))
+	gulp.watch(localFolder + '*.php',             gulp.series('php'))
+	gulp.watch(localAdminJs + '**/*',             gulp.series('copyAdminJs'))
+	gulp.watch(localCss + '**/*',                 gulp.series('css', 'copyCss'))
+	gulp.watch(localJs + '**/*',                  gulp.series('copyJs'))
+	gulp.watch(localTemplateParts + '**/*',       gulp.series('copyTemplateParts'))
+	gulp.watch(localThemeWoo + '*.php',           gulp.series('php_woo'))
+	gulp.watch(localThemeWooTabs + '*.php',       gulp.series('php_woo_tabs'))
+	gulp.watch(localWooCss + '**/*',              gulp.series('copyWooCss'))
+	gulp.watch(localWooPackCss + '**/*',          gulp.series('copyWooPackCss'))
 })
 
 gulp.task('default', gulp.series('watch'))
