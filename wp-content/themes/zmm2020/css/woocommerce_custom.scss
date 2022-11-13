@@ -105,6 +105,12 @@
 						}
 					}
 				}
+
+				.panel {
+					background: #f1f1f1;
+					margin: 0 0 2em;
+					padding: 0;
+				}
 			}
 		}
 	}
@@ -347,12 +353,6 @@
 
 .ira_item_stripe {
 	background: #ddd;
-}
-
-.woocommerce div.product .woocommerce-tabs .panel {
-	background: #f1f1f1;
-	margin: 0 0 2em;
-	padding: 0;
 }
 
 .ira_attr_label {
