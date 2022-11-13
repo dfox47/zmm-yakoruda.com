@@ -1,13 +1,10 @@
-
-
-
 .header {
 
-position: relative;
+	position: relative;
 
 	z-index: 15;
 
-		@media #{$tablet} {
+	@media #{$tablet} {
 		left: 0;
 		position: fixed;
 		top: 0;
@@ -223,8 +220,6 @@ position: relative;
 	}
 }
 
-
-
 .header_mobile_menu {
 	&__active {
 		.header_mobile_menu__toggle {
@@ -323,8 +318,6 @@ position: relative;
 		}
 	}
 }
-
-
 
 .header_phone {
 	color: $c_main;
@@ -447,5 +440,3 @@ position: relative;
 		padding: 14px 30px;
 	}
 }
-
-

@@ -1,6 +1,3 @@
-
-
-
 .woocommerce {
 	div {
 		&.product {
@@ -348,27 +345,25 @@
 	}
 }
 
-.ira_item_stripe{
-
-	background: #dddddd;
+.ira_item_stripe {
+	background: #ddd;
 }
+
 .woocommerce div.product .woocommerce-tabs .panel {
-    background: #f1f1f1;
-    margin: 0 0 2em;
-    padding: 0;
+	background: #f1f1f1;
+	margin: 0 0 2em;
+	padding: 0;
 }
+
 .ira_attr_label {
-    font-size: 16px;
-	 color: #b6b6b6;
+	color: #b6b6b6;
+	font-size: 16px;
 }
 
-
-.ira_attr_value{
-
-    font-size: 14px;
+.ira_attr_value {
+	font-size: 14px;
 }
 
-.mb20{
+.mb20 {
 	margin-bottom: 20px;
 }
-
