@@ -1,0 +1,133 @@
+
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	outline: 0 none;
+	padding: 0;
+
+	&:after,
+	&:before {
+		box-sizing: border-box;
+		margin: 0;
+		outline: 0 none;
+		padding: 0;
+	}
+}
+
+// Learn about this solution to creating custom select styles:
+// @link https://moderncss.dev/custom-select-styles-with-pure-css/
+:root {
+	--select-border: #ffa;
+	--select-focus: blue;
+	--select-arrow: var(--select-border);
+}
+
+a,
+a:visited {
+	transition: $transition;
+}
+
+body {
+	color: $c_main;
+	font-family: $font_main;
+	font-weight: 400;
+	line-height: 1.4;
+	overflow-x: hidden;
+
+	@media #{$tablet} {
+		padding: 92px 0 0;
+	}
+
+	@media #{$mobile} {
+		padding: 50px 0 0;
+	}
+}
+
+html {
+	overflow-x: hidden;
+}
+
+
+
+.bold {
+	font-weight: 700;
+}
+
+.hidden {
+	display: none;
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.normal {
+	font-weight: 400;
+}
+
+
+
+.woocommerce-ordering {
+	cursor: pointer;
+	margin: 0 auto;
+	position: relative;
+
+	&::after {
+		border-bottom: 1px solid #000;
+		border-left: 1px solid #000;
+		content: "";
+		cursor: pointer;
+		display: block;
+		height: 7px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		transform: rotate(-45deg);
+		transition: $transition;
+		width: 7px;
+		z-index: 3;
+	}
+
+	select {
+		// A reset of styles, including removing the default dropdown arrow
+		appearance: none;
+		background-color: transparent;
+		border: 1px solid $c_border_dark;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 16px;
+		margin: 0;
+		// Remove focus outline, will add on alternate element
+		outline: none;
+		padding: 15px 40px 15px 15px;
+		position: relative;
+		text-align: left;
+		width: 100%;
+		// Stack above custom arrow
+		z-index: 1;
+
+		// Remove dropdown arrow in IE10 & IE11
+		// @link https://www.filamentgroup.com/lab/select-css.html
+		&::-ms-expand {
+			display: none;
+		}
+	}
+}
+
+
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+

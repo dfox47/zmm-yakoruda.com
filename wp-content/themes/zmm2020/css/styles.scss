@@ -1,0 +1,26 @@
+@charset "utf-8";
+// powered by FOXARTBOX | info@foxartbox.com
+
+
+
+// should be 1st
+@import "vars";
+@import "defaults";
+
+
+
+@import "contact_from";
+@import "footer";
+@import "header";
+@import "home";
+@import "logo";
+@import "owl.carousel";
+@import "product";
+@import "woocommerce_custom";
+
+
+
+// should be last
+@import "custom";
+
+

@@ -1,0 +1,79 @@
+
+
+
+.contact_from {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 0 0 15px;
+
+	input,
+	input[type="email"],
+	input[type="text"],
+	textarea {
+		background-color: $c_contacts_bg;
+		border: 0 none;
+		color: $c_main;
+		display: block;
+		font-size: 20px;
+		padding: 33px 20px;
+		text-align: center;
+		width: 100%;
+	}
+
+	textarea {
+		height: 274px;
+	}
+
+	&__field_type_1 {
+		padding: 0 0 30px;
+		width: 100%;
+	}
+
+	&__field_type_2 {
+		padding: 0 0 30px;
+		width: 48%;
+	}
+
+	&__submit {
+		cursor: pointer;
+		display: block;
+		font-size: 29px;
+		padding: 0 0 0 15px;
+		text-align: center;
+		text-transform: uppercase;
+		transition: $transition;
+		width: 100%;
+
+		&:hover {
+			span {
+				background-color: $c_special;
+				color: #fff;
+			}
+		}
+
+		input {
+			left: -9999px;
+			position: absolute;
+		}
+
+		span {
+			border: 1px solid $c_special;
+			color: $c_special;
+			display: block;
+			letter-spacing: .04em;
+			padding: 23px;
+			width: 100%;
+		}
+
+		@media #{$mobile} {
+			padding: 0;
+		}
+	}
+
+	@media #{$mobile} {
+		padding: 60px 0 0;
+	}
+}
+
+

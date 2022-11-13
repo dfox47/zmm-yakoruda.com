@@ -1,0 +1,172 @@
+
+
+
+.footer {
+	background-color: $c_main;
+	color: #fff;
+	padding: 50px 0 100px;
+	text-align: center;
+}
+
+.footer_address {
+	background: url(#{$i}/icons/map.svg) no-repeat left 4px scroll transparent;
+	display: inline-block;
+	font-size: 20px;
+	padding: 0 0 0 20px;
+	text-transform: uppercase;
+}
+
+.footer_copyright {
+	font-size: 20px;
+	padding: 50px 0 0;
+
+	span {
+		color: $c_special;
+	}
+}
+
+.footer_email,
+.footer_email:visited {
+	background: url(#{$i}/icons/email.svg) no-repeat left 4px scroll transparent;
+	color: #fff;
+	display: inline-block;
+	font-size: 20px;
+	padding: 0 0 0 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+
+.footer_menu {
+	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 22px;
+	justify-content: center;
+	list-style: none;
+	padding: 0 0 50px;
+	text-transform: uppercase;
+
+	a,
+	a:visited {
+		color: #fff;
+		display: inline-block;
+		padding: 10px 26px;
+		transition: $transition;
+		white-space: nowrap;
+
+		&:hover {
+			color: $c_special;
+			text-decoration: none;
+		}
+	}
+
+	li {
+		position: relative;
+
+		&::after {
+			background-color: #fff;
+			content: "";
+			height: 16px;
+			left: 100%;
+			margin: -8px 0 0;
+			position: absolute;
+			top: 50%;
+			width: 1px;
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.footer_partners {
+	padding: 50px 0;
+
+	h4 {
+		margin-top: 0;
+		text-align: center;
+	}
+}
+
+.footer_partners_list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__item {
+		max-width: 270px;
+		padding: 15px;
+	}
+}
+
+.footer_phone,
+.footer_phone:visited {
+	background: url(#{$i}/icons/phone.svg) no-repeat left top scroll transparent;
+	display: inline-block;
+	font-size: 20px;
+	min-height: 27px;
+	padding: 0 0 0 30px;
+	vertical-align: middle;
+
+	a,
+	a:visited {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+
+.footer_social {
+	display: flex;
+	justify-content: center;
+	padding: 60px 0;
+
+	a,
+	a:visited {
+		background-color: $c_special;
+		background-position: center;
+		background-repeat: no-repeat;
+		display: block;
+		height: 60px;
+		margin: 0 5px;
+		text-decoration: none;
+		width: 60px;
+
+		&:hover {
+			opacity: .5;
+		}
+	}
+
+	&__facebook {
+		background-image: url(#{$i}/icons/facebook.svg);
+		background-size: 20px;
+	}
+
+	&__instagram {
+		background-image: url(#{$i}/icons/instagram.svg);
+		background-size: 32px;
+	}
+
+	&__youtube {
+		background-image: url(#{$i}/icons/youtube.svg);
+		background-size: 31px;
+	}
+}
+
+

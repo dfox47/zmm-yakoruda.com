@@ -1,0 +1,523 @@
+article {
+	font-size: 20px;
+	font-weight: 300;
+
+	p {
+		padding: 0 0 1.5em;
+
+		&:not(.has-background) {
+			&:last-of-type {
+				padding: 0 0 1.5em;
+			}
+		}
+
+		+ ul {
+			margin: -1.2em 0 0;
+		}
+	}
+}
+
+h1 {
+	font-family: $font_main;
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h2 {
+	color: $c_main;
+	font-family: $font_main;
+	font-weight: 500;
+	line-height: 1.1;
+	margin: 0;
+	padding: 3em 0 2em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: $font_main;
+	margin: 2em 0 .5em;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: $font_main;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 3em 0 .5em;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+sup {
+	font-size: .5em;
+}
+
+
+
+#content-area {
+	table {
+		font-size: 24px;
+
+		td,
+		th {
+			font-style: normal;
+			font-weight: 300;
+			padding: 1em 2em;
+		}
+	}
+}
+
+#main-content {
+	&.layout-index {
+		.container {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.container {
+		&:before {}
+	}
+}
+
+
+
+// archive [START]
+.archive {
+	&.category {
+		h2 {
+			font-size: 26px;
+			font-weight: 500;
+			text-align: left;
+
+			a,
+			a:visited {
+				color: $c_main;
+				text-decoration: none;
+
+				&:hover {
+					color: $c_special;
+				}
+			}
+		}
+
+		.content_wrap {
+			max-width: 800px;
+		}
+	}
+}
+
+.archive_content_short {}
+// archive [END]
+
+.btn,
+.btn:visited {
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: $transition;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.btn_main,
+.btn_main:visited {
+	background-color: $c_special;
+	border: 1px solid rgba($c_special, .9);
+	color: #fff;
+	font-size: 15px;
+	padding: 14px 77px;
+
+	&:hover {
+		background-color: #fff;
+		color: $c_special;
+	}
+}
+
+
+
+.cart {
+	display: none;
+}
+
+
+
+.cn-button.bootstrap {
+	background-color: $c_special;
+}
+
+
+
+.contacts_map {
+	display: block;
+	height: 480px;
+	width: 100%;
+}
+
+.contacts_page {
+	&.wp-block-columns {
+		margin-bottom: 8px;
+	}
+
+	a,
+	a:visited {
+		color: $c_main;
+		text-decoration: none;
+
+		&:hover {
+			color: $c_special;
+			text-decoration: underline;
+		}
+	}
+
+	h2 {
+		font-size: 20px;
+		font-weight: 700;
+		margin: 16px 0 0;
+		padding: 0 0 4px;
+		text-align: left;
+		text-transform: none;
+	}
+
+	p {
+		font-weight: 300;
+		padding: 0 0 1.5em;
+	}
+}
+
+
+
+.container {
+	padding: 0 30px;
+	max-width: 1460px;
+	width: 100%;
+}
+
+.content_wrap {
+	font-size: 20px;
+	letter-spacing: .005em;
+	line-height: 1.5;
+	margin: 0 auto;
+	width: 100%;
+}
+
+
+
+.et-cart-info {
+	display: none;
+}
+
+
+
+.entry-content {
+	ul {
+		&.blocks-gallery-grid {
+			padding: 0;
+		}
+	}
+}
+
+.entry-title {
+	a,
+	a:visited {
+		color: $c_main;
+
+		&:hover {
+			color: $c_special;
+		}
+	}
+}
+
+.et_pb_post,
+.et_pb_post:hover {
+	box-shadow: none;
+}
+
+.et_post_meta_wrapper {
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.et_pb_slides {
+	.et_pb_container {
+		max-height: 400px;
+	}
+}
+
+// leasing [START]
+.leasing {
+	align-items: flex-start;
+	border: 1px solid $c_border;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 0 20px;
+	padding: 20px;
+
+	img {
+		display: block;
+		margin: 0;
+		width: 206px;
+	}
+
+	p {
+		padding: 0 0 0 20px;
+	}
+
+	@media #{$mobile} {
+		img {
+			margin: 0 0 20px;
+		}
+
+		p {
+			padding: 0 0 20px;
+			width: 100%;
+		}
+	}
+}
+
+.leasing_list {}
+// leasing [END]
+
+// home page
+.page-id-2 {
+	.et_pb_section_0 {
+		display: none;
+	}
+}
+
+// about us
+.page-id-3243 {
+	article {
+		font-size: 20px;
+		font-weight: 300;
+
+		li {
+			position: relative;
+
+			&::before {
+				background-color: $c_special;
+				border-radius: 50%;
+				content: "";
+				height: 4px;
+				left: -12px;
+				position: absolute;
+				top: 12px;
+				width: 4px;
+			}
+		}
+
+		p {
+			padding: 0 0 1.5em;
+
+			+ ul {
+				margin: -1.5em 0 0;
+			}
+		}
+
+		ul {
+			list-style: none;
+		}
+	}
+
+	.container {
+		max-width: 730px;
+	}
+
+	.wp-block-image {
+		margin: 20px 0;
+		width: 100%;
+	}
+}
+
+// home
+.page-id-3309 {
+	h1 {
+		display: none;
+	}
+
+	h2 {
+		font-size: 23px;
+		font-weight: 700;
+		text-align: center;
+
+		&:first-child {
+			padding-top: 3em;
+		}
+	}
+}
+
+.post_img {
+	display: block;
+	margin: 0 0 30px;
+}
+
+.post_meta {
+	opacity: .5;
+}
+
+.products {
+	h2 {
+		text-align: left;
+	}
+
+	&.related {
+		background-color: $c_footer;
+		padding: 30px 0;
+		position: relative;
+		text-align: center;
+
+		&::after,
+		&::before {
+			background-color: $c_footer;
+			content: "";
+			display: block;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		&::after {
+			left: 100%;
+		}
+
+		&::before {
+			right: 100%;
+		}
+
+		.et_shop_image {
+			min-height: 400px;
+		}
+
+		.price {
+			position: relative;
+
+			&::after {
+				border: 1px solid $c_special;
+				color: $c_special;
+				content: 'Повече';
+				display: block;
+				font-size: 15px;
+				margin: 2em 0 0;
+				padding: 1em;
+				text-align: center;
+				text-transform: uppercase;
+				width: 100%;
+			}
+		}
+
+		.product {
+			background-color: #fff;
+		}
+	}
+}
+
+.pswp__bg {
+	background-color: rgba(#000, .8);
+}
+
+.red {
+	color: $c_special;
+}
+
+.search_wrap {
+	display: flex;
+	justify-content: center;
+	max-width: 1460px;
+	margin: 0 auto;
+	padding: 30px;
+	width: 100%;
+
+	button {
+		background-color: $c_special;
+		border: 0;
+		border-radius: 0;
+		color: #fff;
+		padding: 1em;
+	}
+
+	form {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	input {
+		display: inline-block;
+		margin: 0 20px 0 0;
+		max-width: 300px;
+		width: 100%;
+	}
+}
+
+.single-post {
+	.container {
+		max-width: 800px;
+	}
+
+	.post-meta {
+		text-align: center;
+	}
+}
+
+.trust_us {
+	padding: 50px 0;
+
+	h4 {
+		margin-top: 0;
+		text-align: center;
+	}
+}
+
+.trust_us_list {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	&__item {
+		max-width: 170px;
+		padding: 10px 15px;
+	}
+}
+
+.wpcf7 {
+	padding: 0 0 30px;
+
+	h2 {
+		font-size: 23px;
+		font-weight: 700;
+		text-align: center;
+	}
+}
+
+.wpcf7-form {
+	h2 {
+		padding-left: .5em;
+		padding-right: .5em;
+	}
+}
+
+.wrap {
+	margin: 0 auto;
+	max-width: 1100px;
+	padding: 0 30px;
+	width: 100%;
+}
+
+.wrap2 {
+	margin: 0 auto;
+	max-width: 1460px;
+	padding: 0 30px;
+	width: 100%;
+}
