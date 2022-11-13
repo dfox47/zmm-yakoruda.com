@@ -20,74 +20,19 @@ $desktop:           'only screen and (max-width: 1279px)';
 $mobile:            'only screen and (max-width: 767px)';
 $tablet:            'only screen and (max-width: 1023px)';
 
-// Circe
-@font-face {
-	font-family: 'Circe';
-	src: url('fonts/Circe-Regular.eot');
-	src: local('Circe'), local('Circe-Regular'),
-	url('fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Circe-Regular.woff') format('woff'),
-	url('fonts/Circe-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+// font Circe [START]
+$fontCircle: ('Circe-Bold': 'bold', 'Circe-ExtraBold': 800, 'Circe-ExtraLight': 200, 'Circe-Light': 300, 'Circe-Regular': 'normal', 'Circe-Thin': 100);
 
-// Circe ExtraLight
-@font-face {
-	font-family: 'Circe';
-	src: url('fonts/Circe-ExtraLight.eot');
-	src: local('Circe ExtraLight'), local('Circe-ExtraLight'),
-	url('fonts/Circe-ExtraLight.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Circe-ExtraLight.woff') format('woff'),
-	url('fonts/Circe-ExtraLight.ttf') format('truetype');
-	font-weight: 200;
-	font-style: normal;
+@each $font, $weight in $fontCircle {
+	@font-face {
+		font-family: 'Circe';
+		src: url('fonts/#{$font}.eot');
+		src: local('#{$font}'),
+			url('fonts/#{$font}.eot?#iefix') format('embedded-opentype'),
+			url('fonts/#{$font}.woff') format('woff'),
+			url('fonts/#{$font}.ttf') format('truetype');
+		font-weight: #{$weight};
+		font-style: normal;
+	}
 }
-
-// Circe Thin
-@font-face {
-	font-family: 'Circe';
-	src: url('fonts/Circe-Thin.eot');
-	src: local('Circe Thin'), local('Circe-Thin'),
-	url('fonts/Circe-Thin.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Circe-Thin.woff') format('woff'),
-	url('fonts/Circe-Thin.ttf') format('truetype');
-	font-weight: 100;
-	font-style: normal;
-}
-
-// Circe Light
-@font-face {
-	font-family: 'Circe';
-	src: url('fonts/Circe-Light.eot');
-	src: local('Circe Light'), local('Circe-Light'),
-	url('fonts/Circe-Light.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Circe-Light.woff') format('woff'),
-	url('fonts/Circe-Light.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
-}
-
-// Circe Bold
-@font-face {
-	font-family: 'Circe';
-	src: url('fonts/Circe-Bold.eot');
-	src: local('Circe Bold'), local('Circe-Bold'),
-	url('fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Circe-Bold.woff') format('woff'),
-	url('fonts/Circe-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
-}
-
-// Circe ExtraBold
-@font-face {
-	font-family: 'Circe';
-	src: url('fonts/Circe-ExtraBold.eot');
-	src: local('Circe ExtraBold'), local('Circe-ExtraBold'),
-	url('fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Circe-ExtraBold.woff') format('woff'),
-	url('fonts/Circe-ExtraBold.ttf') format('truetype');
-	font-weight: 800;
-	font-style: normal;
-}
+// font Circe [END]
